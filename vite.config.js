@@ -3,6 +3,7 @@ import { ViteEjsPlugin } from "vite-plugin-ejs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { glob } from "glob";
+
 import liveReload from "vite-plugin-live-reload";
 
 function moveOutputPlugin() {
@@ -21,19 +22,20 @@ function moveOutputPlugin() {
   };
 }
 
-export default defineConfig(({ mode }) => ({
-  // dev 用 "/"；build（部署到 gh-pages）才用 "/<repo 名>/"
-  base: mode === "development" ? "/" : "/HW-main-quest-3-4st/",
+export default defineConfig({
+  // base 的寫法:
+  // base: '/Repository 的名稱/'
+  base: "/HW-main-quest-3st-4st/",
   plugins: [
     liveReload(["./layout/**/*.ejs", "./pages/**/*.ejs", "./pages/**/*.html"]),
     ViteEjsPlugin(),
     moveOutputPlugin(),
   ],
   server: {
-    open: "/pages/index.html", // 啟動 dev server 自動開正確頁面
+    // 啟動 server 時預設開啟的頁面
+    open: "pages/index.html",
   },
   build: {
-    outDir: "dist",
     rollupOptions: {
       input: Object.fromEntries(
         glob
@@ -47,5 +49,13 @@ export default defineConfig(({ mode }) => ({
           ])
       ),
     },
+    outDir: "dist",
   },
-}));
+  scripts: {
+    dev: "vite",
+    build: "vite build",
+    preview: "vite preview",
+    predeploy: "npm run build",
+    deploy: "gh-pages -d dist",
+  },
+});
