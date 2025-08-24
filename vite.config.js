@@ -22,20 +22,19 @@ function moveOutputPlugin() {
   };
 }
 
-export default defineConfig({
-  // base 的寫法:
-  // base: '/Repository 的名稱/'
-  base: "/HW-main-quest-3st-4st/",
+export default defineConfig(({ mode }) => ({
+  // 本地開發用 "/"，部署 (build) 才用 repo 名
+  base: mode === "development" ? "/" : "/HW-main-quest-3st-4st-2/",
   plugins: [
     liveReload(["./layout/**/*.ejs", "./pages/**/*.ejs", "./pages/**/*.html"]),
     ViteEjsPlugin(),
     moveOutputPlugin(),
   ],
   server: {
-    // 啟動 server 時預設開啟的頁面
-    open: "pages/index.html",
+    open: "/pages/index.html", // dev server 預設打開首頁
   },
   build: {
+    outDir: "dist",
     rollupOptions: {
       input: Object.fromEntries(
         glob
@@ -49,13 +48,5 @@ export default defineConfig({
           ])
       ),
     },
-    outDir: "dist",
   },
-  scripts: {
-    dev: "vite",
-    build: "vite build",
-    preview: "vite preview",
-    predeploy: "npm run build",
-    deploy: "gh-pages -d dist",
-  },
-});
+}));
