@@ -1,0 +1,54 @@
+/*按鈕*/
+.btn {
+  /*圓角*/
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-weight: 500;
+  line-height: 1.5;
+  font-size: 16px;
+  /*游標變成手指的模樣*/
+  cursor: pointer;
+  /*去除邊線*/
+  border: none;
+  /*背景透明度*/
+  background-color: transparent;
+}
+@media (max-width: 576px) {
+  .btn {
+    padding: 8px 16px;
+  }
+}
+/*黑色按鈕*/
+.btn-dark {
+  background-color: $neutral-900;
+  color: $neutral-0;
+}
+.btn-light {
+  border: 1px solid $neutral-900;
+}
+.btn-green-300 {
+  background-color: $primary-300;
+  color: $neutral-900;
+}
+
+@media (max-width: 767px) {
+  .hd-btn-size {
+    width: 160px; /* 固定寬度 */
+  }
+  .hd-btn-size2 {
+    width: 48px;
+  }
+  .hd-btn-width {
+    width: 0px;
+  }
+}
+
+/*display: inline-block; 意思是：它讓元素 同時具有
+inline（不會強制換行，可以和其他元素排在同一行）
+block（可以設定寬度 width、高度 height、內距 padding、外距 margin）的特性。*/
+.btn-inline-block {
+  display: inline-block;
+}
+.btn-primary {
+  background: $primary-300;
+}

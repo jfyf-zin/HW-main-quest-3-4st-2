@@ -1,0 +1,199 @@
+/* 通用樣式 */
+.header {
+  /* height: 400px;
+  width: 100%;*/
+  background-image: url("https://github.com/hexschool/2022-web-layout-training/blob/main/2025-week3-4/banner.png?raw=true");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* text-align: center;*/
+  padding-top: 289px;
+  padding-bottom: 288px;
+  position: relative; /*	讓 .header 成為一個定位參考容器，如果你之後想讓文字用 position: absolute 壓在圖片上時，就能以 .header 為基準定位。*/
+  overflow: hidden; /*隱藏超出範圍的內容，如果圖片或文字跑出 .header 區塊範圍，就不會顯示出來，保持版面整齊。*/
+  /* 圓角*/
+  border-radius: 16px;
+}
+
+.container {
+  /*width: 1296px;*/
+  margin: 0 auto;
+  max-width: 1320px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+/*產品圖片*/
+/*行*/
+.project-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -4px;
+  margin-left: -4px;
+}
+/*欄位*/
+.project-col {
+  width: calc(100% / 12 * 6);
+  padding-right: 4px;
+  padding-left: 4px;
+}
+
+/*字型*/
+.font-Mina {
+  font-family: "Mina", sans-serif;
+}
+
+.del-price {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.05rem;
+  color: var(--primary-600);
+  padding-left: 8px;
+}
+.product-spic {
+  width: 64px;
+  text-align: center;
+  color: var(--primary-600);
+}
+.size-box {
+  width: 160px;
+  border: 1px soild #212529;
+}
+/*按鈕*/
+.btn {
+  /*圓角*/
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-weight: 500;
+  line-height: 1.5;
+  font-size: 16px;
+  /*游標變成手指的模樣*/
+  cursor: pointer;
+  /*去除邊線*/
+  border: none;
+  /*背景透明度*/
+  background-color: transparent;
+}
+/*產品按鈕尺寸*/
+.btn-size {
+  width: 160px;
+  border: 1px solid var(--primary-300);
+}
+/*按鈕互動*/
+.btn.btn-size.active,
+.btn.btn-size:hover {
+  border-color: var(--primary-900);
+}
+.h8.remaining-number {
+  color: var(--primary-red);
+}
+.btn.btn-size2 {
+  /*Flex 裡項目水平置中*/
+  justify-content: center;
+  /*Flex 垂直置中*/
+  align-items: center;
+  width: 259px;
+  border: 1px solid var(--primary-900);
+}
+.btn.btn-size3 {
+  /*Flex 裡項目水平置中*/
+  justify-content: center;
+  /*Flex 垂直置中*/
+  align-items: center;
+  width: 259px;
+  color: var(--primary-0);
+  background-color: var(--primary-900);
+}
+.underline-box {
+  border-bottom: 1px solid var(--primary-300);
+}
+/*黑色按鈕*/
+.btn-item {
+  background-color: var(--primary-900);
+  color: var(--primary-0);
+}
+@media (max-width: 767px) {
+  .hd-btn-size {
+    width: 160px; /* 固定寬度 */
+  }
+  .hd-btn-size2 {
+    width: 48px;
+  }
+  .hd-btn-width {
+    width: 0px;
+  }
+}
+
+.font-Mina {
+  font-family: "Mina", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.footer {
+  text-align: center;
+}
+.category .active {
+  color: var(--primary-400);
+}
+
+.page-fuction .btn {
+  padding: 8px 15px;
+  border-radius: 0;
+  font-weight: 400;
+}
+.page-fuction .active {
+  background-color: var(--primary-300);
+  font-weight: 500;
+}
+/*heart*/
+.heart-wrap {
+  position: relative; /* 重要：讓絕對定位的愛心以此容器為參考 */
+  overflow: visible;
+}
+.heart-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none; /* 桌機不顯示 */
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  color: #6c757d;
+  z-index: 30;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: transform 0.12s ease, color 0.12s ease, background 0.12s ease;
+}
+/* 行動版（小於等於 767px）顯示愛心 */
+@media (max-width: 767px) {
+  .heart-btn {
+    display: flex; /* 或 block，看你想要的內部排法 */
+  }
+}
+.heart-btn.active {
+  background: #fff;
+  color: #e83e8c; /* 粉紅或你要的顏色 */
+  transform: scale(1.05);
+}
+/*.heart-btn.active i {
+   如果你有 filled icon，這邊可以切換 
+}
+
+/* size-badge 範例（右下紫色）*/
+.size-badge {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: #8b3ff5;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  z-index: 25;
+}

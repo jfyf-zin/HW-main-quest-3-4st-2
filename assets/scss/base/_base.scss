@@ -1,0 +1,38 @@
+*,
+*::after,
+::before {
+  box-sizing: border-box;
+}
+
+/*基本*/
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: 1.5;
+  font-style: 16px;
+  letter-spacing: 0.05rem;
+  color: $neutral-900;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: $neutral-900;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+}
+.border-left {
+  border-left: 1px solid $neutral-900;
+  padding-left: 8px;
+}
+.border-left2 {
+  border-left: 3px solid $primary-300;
+  padding-left: 8px;
+}
+.list-dot {
+  list-style-type: disc;
+  padding-left: 24px;
+}

@@ -1,0 +1,23 @@
+/*元件*/
+/*Breadcrumb（中文：麵包屑導航） 是一種網頁導覽方式，用來顯示使用者目前所在頁面在整個網站層級中的位置，並可讓使用者快速返回上一層。*/
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "/";
+  padding: 0 12px;
+  color: $primary-300;
+  font-weight: 700;
+}
+.breadcrumb-item {
+  display: flex;
+  font-weight: 500;
+}
+.breadcrumb-link {
+  color: $neutral-600;
+}
+@media (max-width: 767px) {
+  .breadcrumb-item + .breadcrumb-item::before {
+    padding: 0 8px;
+  }
+  .breadcrumb-item {
+    font-size: 14px;
+  }
+}

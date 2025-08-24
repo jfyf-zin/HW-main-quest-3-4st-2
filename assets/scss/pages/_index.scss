@@ -1,0 +1,211 @@
+/*邊線圓角，文字置中??????為何*/
+.quote {
+  /* 圓角*/
+  border-radius: 12px;
+  text-align: center;
+}
+/* Layout Containers*/
+.container {
+  /*width: 1296px;*/
+  margin: 0 auto;
+  max-width: 1320px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.container.centered {
+  width: 856px;
+  text-align: center;
+}
+.container-main {
+  /* width: 856px;*/
+  /*  background: red;*/
+  margin: 0 auto;
+  text-align: center;
+  /* max-width: 880px;*/
+  padding-right: 12px;
+  padding-left: 12px;
+}
+.container-nocenter {
+  /* width: 856px;*/
+  /*  background: red;*/
+  margin: 0 auto;
+  /*  text-align: center;*/
+  /* max-width: 880px;*/
+  padding-right: 12px;
+  padding-left: 12px;
+}
+.container-footer {
+  /*width: 1296px;*/
+  background: red;
+  margin: 0 auto;
+  max-width: 1320px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.header {
+  /* height: 400px;
+  width: 100%;*/
+  background-image: url("https://github.com/hexschool/2022-web-layout-training/blob/main/2025-week3-4/banner.png?raw=true");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* text-align: center;*/
+  padding-top: 289px;
+  padding-bottom: 288px;
+  position: relative; /*	讓 .header 成為一個定位參考容器，如果你之後想讓文字用 position: absolute 壓在圖片上時，就能以 .header 為基準定位。*/
+  overflow: hidden; /*隱藏超出範圍的內容，如果圖片或文字跑出 .header 區塊範圍，就不會顯示出來，保持版面整齊。*/
+  /* 圓角*/
+  border-radius: 16px;
+}
+/*背景圖的調整*/
+@media (max-width: 767px) {
+  .header {
+    /* background: red;*/
+    padding: 87px 0;
+
+    background-image: url("https://github.com/jfyf-zin/HW-main-quest-1st/blob/master/hero-sm.png?raw=true");
+  }
+  .Brand-Story {
+    font-size: 20px;
+  }
+}
+
+.product-card {
+  position: relative;
+
+  .product-card-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 8px 12px;
+    background: $primary-100;
+    font-size: 14px;
+    color: $primary-400;
+  }
+}
+@media (max-width: 767px) {
+  .product-md-row {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+
+  .product-md-col {
+    min-width: 316px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+.banner {
+  text-align: center;
+  background-image: url(/assets/images/banner-co-branded.png);
+  padding: 100px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+
+  .star-img {
+    position: absolute;
+    width: 48px;
+    top: 68px;
+    left: calc(50% - 397px);
+  }
+  .sparkle-img {
+    position: absolute;
+    width: 76px;
+    bottom: 132px;
+    right: calc(50% - 357px);
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    overflow-x: hidden;
+    padding: 64px 0;
+    background-image: url(/assets/images/banner-co-branded-sm.png);
+
+    .btn {
+      padding: 12px 24px;
+    }
+    .star-img {
+      top: 32px;
+      left: -20px;
+    }
+    .sparkle-img {
+      bottom: 104px;
+      right: -28px;
+    }
+  }
+}
+.category {
+  position: relative;
+  .category-txt {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(black, 0.4); /*顏色也可ˇdarken*/
+    color: white;
+    display: flex;
+    flex-direction: column; /*垂直方向*/
+    align-items: center; /*軸線對齊*/
+    justify-content: center; /*水平置中對齊*/
+  }
+}
+.inspiration-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -4px;
+}
+.imspiration-col-4 {
+  width: calc(100% / 12 * 4);
+  padding: 4px;
+}
+.imspiration-col-6 {
+  width: calc(100% / 12 * 6);
+  padding: 4px;
+}
+.imspiration-col-12 {
+  width: 100%;
+  padding: 4px;
+}
+
+/*巢狀結構+父選擇器 &*/
+/* .inspiration {
+  &-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -4px;
+  }
+  &-col-4 {
+    width: calc(100% / 12 * 4);
+    padding: 4px;
+  }
+  &-col-6 {
+    width: calc(100% / 12 * 6);
+    padding: 4px;
+  }
+  &-col-12 {
+    width: 100%;
+    padding: 4px;
+  }
+} */
+@media (max-width: 767px) {
+  .inspiration-row {
+    flex-wrap: nowrap;
+    margin: 0 -8px;
+    img {
+      min-width: 300px;
+    }
+  }
+  .imspiration-col-4,
+  .imspiration-col-6,
+  .imspiration-col-12 {
+    width: unset; /*解除寬度的設定*/
+    padding: 0 8px;
+  }
+}

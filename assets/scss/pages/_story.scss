@@ -1,0 +1,151 @@
+/* Layout Containers*/
+.container {
+  /*width: 1296px;*/
+  margin: 0 auto;
+  max-width: 1320px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.container.centered {
+  width: 856px;
+  text-align: center;
+}
+.container-main {
+  /* width: 856px;*/
+  /*  background: red;*/
+  margin: 0 auto;
+  text-align: center;
+  /* max-width: 880px;*/
+  padding-right: 12px;
+  padding-left: 12px;
+}
+.container-nocenter {
+  /* width: 856px;*/
+  /*  background: red;*/
+  margin: 0 auto;
+  /*  text-align: center;*/
+  /* max-width: 880px;*/
+  padding-right: 12px;
+  padding-left: 12px;
+}
+.container-footer {
+  /*width: 1296px;*/
+  background: red;
+  margin: 0 auto;
+  max-width: 1320px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.header-story {
+  /* height: 400px;
+  width: 100%;*/
+  background-image: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/refs/heads/main/2025-week1/hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 152px;
+  position: relative; /*	讓 .header 成為一個定位參考容器，如果你之後想讓文字用 position: absolute 壓在圖片上時，就能以 .header 為基準定位。*/
+  overflow: hidden; /*隱藏超出範圍的內容，如果圖片或文字跑出 .header 區塊範圍，就不會顯示出來，保持版面整齊。*/
+}
+
+/*背景圖的調整*/
+@media (max-width: 767px) {
+  .header {
+    /* background: red;*/
+    padding: 87px 0;
+
+    background-image: url("https://github.com/jfyf-zin/HW-main-quest-1st/blob/master/hero-sm.png?raw=true");
+  }
+  .Brand-Story {
+    font-size: 20px;
+  }
+}
+/*邊線圓角，文字置中??????為何*/
+.quote {
+  border-radius: 12px;
+  text-align: center;
+}
+/*文對其樣式*/
+@media (max-width: 767px) {
+  .quote {
+    border-radius: 12px;
+    text-align: left;
+  }
+}
+/*產品圖片*/ /*行*/
+.project-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -4px;
+  margin-left: -4px;
+}
+
+.project-col {
+  width: calc(100% / 12 * 6);
+  padding-right: 4px;
+  padding-left: 4px;
+}
+
+.page-fuction .btn {
+  padding: 8px 15px;
+  border-radius: 0;
+  font-weight: 400;
+}
+
+.page-fuction .active {
+  background-color: var(--primary-300);
+  font-weight: 500;
+}
+
+.size-box {
+  width: 160px;
+  border: 1px solid var(--primary-900);
+}
+
+.del-price {
+  font-size: 14px;
+  color: var(--primary-600);
+  padding-left: 8px;
+}
+
+.underline-box {
+  /*  vertical-align: center;*/
+  border-bottom: 1px solid var(--primary-300);
+}
+
+.remaining-number {
+  color: var(--primary-red);
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--primary-300);
+}
+
+.border-left {
+  border-left: 1px solid var(--primary-900);
+  padding-left: 8px;
+}
+
+.border-left2 {
+  /*  background: red;*/
+  border-left: 3px solid var(--primary-300);
+  padding-left: 8px;
+}
+.list-dot {
+  list-style-type: disc;
+  padding-left: 24px;
+}
+
+.p-txt {
+  font-size: 16px;
+  letter-spacing: 0.05rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.uline-green {
+  border-bottom: 1px solid var(--primary-400);
+  display: inline;
+}
